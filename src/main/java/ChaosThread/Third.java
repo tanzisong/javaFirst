@@ -11,28 +11,32 @@ public class Third {
       }
     }).start();
 
+    System.out.println("end1");
+
     new Thread(new Runnable() {
       public void run() {
-        testThread2.Run1();
+        testThread1.Run2();
       }
     }).start();
+
+    System.out.println("end2");
   }
 }
 
 class TestThread {
   public synchronized void Run1() {
-    System.out.println("Run - 1");
     try {
       Thread.sleep(1000);
+      System.out.println("Run - 1");
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
   }
 
   public synchronized void Run2() {
-    System.out.println("Run - 2");
     try {
       Thread.sleep(1000);
+      System.out.println("Run - 2");
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
